@@ -30,7 +30,7 @@ namespace Kerbal_Memorial
                 {
                     indexer = PersistenceFile.ReadLine();
 
-                    if (indexer.Contains("name") == True)
+                    if (indexer.Contains("name") == true)
                     {
                         indexer = indexer.Remove(0, 10);
                         kn = indexer;
@@ -38,7 +38,7 @@ namespace Kerbal_Memorial
                         richTextBox1.AppendText(Environment.NewLine);
                     }
 
-                    if (indexer.Contains("badS") == True)
+                    if (indexer.Contains("badS") == true)
                     {
                         indexer = indexer.Remove(0, 10);
                         ba = indexer;
@@ -46,15 +46,16 @@ namespace Kerbal_Memorial
                         richTextBox1.AppendText(Environment.NewLine);
                     }
 
-                    if (indexer.Contains("state") == True)
+                    if (indexer.Contains("state") == true)
                     {
                         indexer = indexer.Remove(0, 10);
                         ks = indexer;
                         richTextBox1.AppendText(indexer);
                         richTextBox1.AppendText(Environment.NewLine);
+                        richTextBox1.AppendText(Environment.NewLine);
                     }
 
-                } while (indexer.Contains("VESSEL") != True);
+                } while (indexer.Contains("VESSEL") != true);
             } 
 
 
@@ -63,7 +64,7 @@ namespace Kerbal_Memorial
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
             openFileDialog1.InitialDirectory = "c:\\";
-            openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            openFileDialog1.Filter = "sfs files (*.sfs)|*.sfs|All files (*.*)|*.*";
             openFileDialog1.FilterIndex = 2;
             openFileDialog1.RestoreDirectory = true;
 
