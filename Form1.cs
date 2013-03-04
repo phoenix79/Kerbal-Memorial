@@ -11,8 +11,12 @@ namespace Kerbal_Memorial
 {
     public partial class Form1 : Form
     {
+        string kn;
+        bool ba;
+        int ks;
+
         public Form1()
-        {
+        {           
             InitializeComponent();
         }
 
@@ -20,9 +24,7 @@ namespace Kerbal_Memorial
         {
             OpenFileDialog OpenFileDialog1 = new OpenFileDialog();
             List<CrewMember>DeadKerbals = new List<CrewMember>();
-            string kn;
-            bool ba;
-            int ks;
+       
             string indexer = "indexed";
             if (OpenFileDialog1.ShowDialog() == DialogResult.OK)
             {
