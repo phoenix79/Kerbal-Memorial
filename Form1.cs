@@ -19,9 +19,10 @@ namespace Kerbal_Memorial
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog OpenFileDialog1 = new OpenFileDialog();
+            List<CrewMember>DeadKerbals = new List<CrewMember>();
             string kn;
-            string ba;
-            string ks;
+            bool ba;
+            int ks;
             string indexer = "indexed";
             if (OpenFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -41,18 +42,22 @@ namespace Kerbal_Memorial
                     if (indexer.Contains("badS") == true)
                     {
                         indexer = indexer.Remove(0, 10);
-                        ba = indexer;
+                        //ba = indexer;
                         richTextBox1.AppendText(indexer);
                         richTextBox1.AppendText(Environment.NewLine);
+                        ba = Boolean.Parse(indexer);
                     }
 
                     if (indexer.Contains("state") == true)
                     {
                         indexer = indexer.Remove(0, 10);
-                        ks = indexer;
+                        //ks = indexer;
                         richTextBox1.AppendText(indexer);
                         richTextBox1.AppendText(Environment.NewLine);
                         richTextBox1.AppendText(Environment.NewLine);
+                        ks = int.Parse(indexer);
+                        DeadKerbals.Add(new CrewMember(kn, ks, ba));
+
                     }
 
                 } while (indexer.Contains("VESSEL") != true);
