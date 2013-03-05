@@ -24,6 +24,7 @@ namespace Kerbal_Memorial
         {
             OpenFileDialog OpenFileDialog1 = new OpenFileDialog();
             List<CrewMember>DeadKerbals = new List<CrewMember>();
+            
        
             string indexer = "indexed";
             if (OpenFileDialog1.ShowDialog() == DialogResult.OK)
@@ -59,12 +60,16 @@ namespace Kerbal_Memorial
                         richTextBox1.AppendText(Environment.NewLine);
                         ks = int.Parse(indexer);
                         DeadKerbals.Add(new CrewMember(kn, ks, ba));
+                        UserControl1 wall = new UserControl1();
+                        
 
                     }
 
                 } while (indexer.Contains("VESSEL") != true);
-            } 
 
+                
+            } 
+            
 
         }
 

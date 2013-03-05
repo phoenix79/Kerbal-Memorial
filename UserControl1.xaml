@@ -3,9 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
-             d:DesignHeight="1080" d:DesignWidth="1920">
-    <Grid>
-        <Image Height="1070" HorizontalAlignment="Left" Margin="10,10,0,0" Stretch="Fill" VerticalAlignment="Top" Width="1910" />
+             mc:Ignorable="d" Opacity="1" Height="810" Width="1440" FontStretch="Expanded" Name="TheWall">
+    
+    <UserControl.Resources>
+        <CollectionViewSource Source="{Binding Source={x:Static Application.Current}, Path=DeadKerbals}" x:Key="listingDataView" />        
+    </UserControl.Resources>
+    
+    <Grid Height="810" Width="1440">
+        
+        <Image Height="810" HorizontalAlignment="Left" Stretch="Fill" VerticalAlignment="Top" Width="1440  " Source="C:\Users\Shane\Documents\Visual Studio 2010\Projects\Kerbal Memorial\Kerbal Memorial\Images\screenshot45.png" Focusable="False" />
+        <TextBlock Height="149" HorizontalAlignment="Left" Margin="265,349,0,0" Text="" VerticalAlignment="Top" DataContext="{Binding}" FontSize="9.5" Width="80" Background="{x:Null}" OpacityMask="#81000000" FontWeight="Bold" />
     </Grid>
+    
 </UserControl>
